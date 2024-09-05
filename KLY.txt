@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+class Course{
+    int dur,fees,str;
+    char sub[5];
+    public:
+    void accept()
+    {
+        cout<<"Enter Duration, Fees, Strength, Subject:- "<<endl;
+        cin>>dur>>fees>>str>>sub;
+    }
+    void show()
+    {
+        cout<<"Duration is: "<<dur<<" Months"<<"\nFees is: "<<fees<<"\nStrength: "<<str<<"\nSubject is: "<<sub;
+    }
+};
+int main() {
+   
+   Course c1;
+   c1.accept();
+   c1.show();
+    return 0;
+}
+
+---------------------------------------------------------------------------------
+
+changed values
+#include <iostream>
+using namespace std;
+class Course{
+    int dur,fees,str;
+    
+    public:
+    void accept()
+    {
+        cout<<"Enter Duration, Fees, Strength"<<endl;
+        cin>>dur>>fees>>str;
+    }
+    void show()
+    {
+        cout<<"Duration is: "<<dur<<" Months"<<"\nFees is: "<<fees<<"\nStrength: "<<str<<endl;
+    }
+    void setDur(int);
+    int getDur();
+    // Course(int d,int f,int s)
+    // {
+    //     dur = d;
+    //     fees = f;
+    //     str = s;
+    // }
+    
+};
+void Course :: setDur(int d)
+{
+    dur = d;
+}
+int Course :: getDur()
+    {
+        // dur = d;
+        return dur;
+    }
+    
+int main() {
+   
+   Course c1;
+   c1.accept();
+   c1.show();
+   c1.setDur(4);
+   c1.show();
+   c1.getDur();
+   cout<<"Changed duration is: "<<c1.getDur();
+    
+}
